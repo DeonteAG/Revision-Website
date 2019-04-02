@@ -2,7 +2,13 @@
 	color: white;
 	font-size: 40px;
 	text-align: center;
-	 		
+	font-family: 'Cutive';
+	font-weight: bold;
+}
+
+#subheading {
+	position: absolute;
+	position: center;
 }
 
 ul {
@@ -24,6 +30,10 @@ li a, .dropbtn {
   font-size: 20px;
   padding: 14px 80px;
   text-decoration: none;
+  border-style: double;
+  border-color: blue;
+  border-radius: 15px;
+   
 }
 
 li a:hover, .dropdown:hover .dropbtn {
@@ -63,8 +73,6 @@ body {
    background-position: center; 
   background-repeat: no-repeat; 
   background-size: cover;
-
-
 }
 
 
