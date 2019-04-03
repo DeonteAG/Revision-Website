@@ -1,9 +1,10 @@
 #heading {
 	color: white;
-	font-size: 60px;
+	font-size: 80px;
 	text-align: center;
-	font-family: 'Cutive';
+	font-family:'Alegreya Sans SC';
 	font-weight: bold;
+	float: center;
 }
 
 #subheading {
@@ -14,9 +15,9 @@
 ul {
   list-style-type: none;
   margin: 0;
-  align:center;
-  padding-left: 275px;
+  padding: 0;
   overflow: hidden;
+  background-color: transparent;
 }
 
 li {
@@ -28,17 +29,16 @@ li a, .dropbtn {
   color: white;
   text-align: center;
   font-size: 20px;
-  padding: 14px 135px;
+  padding: 14px;
   text-decoration: none;
   border-style: double;
-  border-color: white;
-  background-color: black;
-
+  border-color: rgb(0, 160, 255);
+  border-radius: 15px;
    
 }
 
 li a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+  background-color: rgb(0, 160, 255);
 }
 
 li.dropdown {
@@ -55,16 +55,17 @@ li.dropdown {
 
 .dropdown-content a {
   color: white;
-  padding: 12px 135px;
+  padding: 14px;
   text-decoration: none;
   border-style: double;
-  border-color: white;
+  border-color: black;
+  border-radius: 15px;
   display: block;
   text-align: left;
   
 }
 
-.dropdown-content a:hover {background-color: red}
+.dropdown-content a:hover {background-color: rgb(0, 160, 255);}
 
 .dropdown:hover .dropdown-content {
   display: block;
@@ -75,7 +76,7 @@ body {
   background-position: center; 
   background-repeat: no-repeat; 
   background-size: cover;
-  font-family: 'Cutive'
+  margin: 0px;
 }
 
 
