@@ -14,9 +14,9 @@
 ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  align:center;
+  padding-left: 275px;
   overflow: hidden;
-  background-color: black;
 }
 
 li {
@@ -31,13 +31,14 @@ li a, .dropbtn {
   padding: 14px 135px;
   text-decoration: none;
   border-style: double;
-  border-color: blue;
-  border-radius: 15px;
+  border-color: white;
+  background-color: black;
+
    
 }
 
 li a:hover, .dropdown:hover .dropbtn {
-  background-color: blue;
+  background-color: red;
 }
 
 li.dropdown {
@@ -57,14 +58,13 @@ li.dropdown {
   padding: 12px 135px;
   text-decoration: none;
   border-style: double;
-  border-color: black;
-  border-radius: 15px;
+  border-color: white;
   display: block;
   text-align: left;
   
 }
 
-.dropdown-content a:hover {background-color: blue}
+.dropdown-content a:hover {background-color: red}
 
 .dropdown:hover .dropdown-content {
   display: block;
@@ -75,6 +75,7 @@ body {
   background-position: center; 
   background-repeat: no-repeat; 
   background-size: cover;
+  font-family: 'Cutive'
 }
 
 
