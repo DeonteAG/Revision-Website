@@ -17,20 +17,25 @@ running = false;
 var enemies;
 
 // Store the speeds
-var enemySpeed = 3;
-var playerSpeed = 7;
+var enemySpeed = 5;
+var playerSpeed = 8;
 
 // Create a way of storing the enemey spawner timer
 var timer;
 
+
+
 // Run before the game loop is started
 function setup() {
-	canvasWidth  = 2500;
-    canvasHeight = 1600;        
-    createCanvas(windowWidth,windowHeight);
-    reset();
+	canvasWidth  = windowWidth;
+    canvasHeight = windowHeight;        
+    var cnv = createCanvas(canvasWidth,canvasHeight);
     enemies = [];
     running = false;
+	pixelDensity(1);
+	cnv.position(0,0);
+	cnv.parent('game');
+	reset();
                 
 }
 
@@ -45,8 +50,9 @@ function startGame() {
 // Game loop
 function draw() {
 	// Check if the game is running
+	clear();
+	
     if (running) {
-		background(0,0,0);
         fill(pColor);
         rect(px,py,pw,ph);
         px += pxspeed;
@@ -66,11 +72,13 @@ function draw() {
             enemies[i].y += yMove;
             
         }
+	windowChecker();
     enemyCollisions();
     enemyPlayerCollisions();
+	
 
     //These are the barriers if the player goes out of bounds
-    if (px + pw >= windowWidth) {
+    if (px + pw >= canvasWidth) {
         die();
 		
 		}
@@ -79,7 +87,7 @@ function draw() {
         die();
 		}
                                
-	if (py >= windowHeight) {
+	if (py >= canvasHeight) {
         die();
 		
 		}
@@ -101,7 +109,7 @@ function reset() {
     pyspeed = 0;
     pw = 25;
     ph = 25;
-    pColor = color(0,255,0);
+    pColor = 'violet';
     ew = 40;
     eh = 40;
     eColor = color(255,0,0);
@@ -114,7 +122,6 @@ function reset() {
 function die() {
     // Stop the game running
     running = false;
-
     // Clear the timer
     clearTimeout(timer);
     reset();
@@ -250,3 +257,14 @@ function enemyPlayerCollisions() {
         }
     }
 }
+
+function windowChecker() {
+	// This function here checks wether the window is curretly in focus.
+	// If it is in focus, the code does nothing, however if it is "blurred" then the game ends so the timeouts do not run in the background 
+	
+	window.addEventListener('blur', function(){
+   	die();
+}, false);
+
+	}
+
